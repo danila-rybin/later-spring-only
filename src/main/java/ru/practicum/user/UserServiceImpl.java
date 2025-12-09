@@ -16,16 +16,6 @@ public class UserServiceImpl implements UserService {
 
     private final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
-    @Value("${app.welcome-message}")
-    private String welcomeMessage;
-
-    @Override
-    public List<User> getAllUsers() {
-        log.info("Запрос на получение всех пользователей");
-        log.debug("Welcome message: {}", welcomeMessage);
-        return repository.findAll();
-    }
-
     @Override
     public User saveUser(User user) {
         log.info("Сохранение нового пользователя: {}", user);
