@@ -15,12 +15,5 @@ public class InMemoryUserRepository implements UserRepository {
         return new ArrayList<>(users.values());
     }
 
-    @Override
-    public User save(User user) {
-        if (user.getId() == null) {
-            user.setId(idSequence++);
-        }
-        users.put(user.getId(), user);
-        return user;
-    }
+
 }
